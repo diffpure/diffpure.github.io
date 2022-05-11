@@ -1,0 +1,607 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    body {
+        font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 980px;
+    }
+
+    h1 {
+        font-weight: 300;
+        line-height: 1.15em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    a:link, a:visited {
+        color: #B6486F;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-weight: 400;
+        margin: 16px 0px 4px 0px;
+    }
+
+    .paper-title {
+        padding: 16px 0px 16px 0px;
+    }
+
+    section {
+        margin: 32px 0px 32px 0px;
+        text-align: justify;
+        clear: both;
+    }
+
+    .col-5 {
+        width: 20%;
+        float: left;
+    }
+
+    .col-4 {
+        width: 25%;
+        float: left;
+    }
+
+    .col-3 {
+        width: 33%;
+        float: left;
+    }
+
+    .col-2 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-1 {
+        width: 100%;
+        float: left;
+    }
+
+    .row, .author-row, .affil-row {
+        overflow: auto;
+    }
+
+    .author-row, .affil-row {
+        font-size: 26px;
+    }
+
+    .row {
+        margin: 16px 0px 16px 0px;
+    }
+
+    .authors {
+        font-size: 26px;
+    }
+
+    .affil-row {
+        margin-top: 16px;
+    }
+
+    .teaser {
+        max-width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .screenshot {
+        width: 256px;
+        border: 1px solid #ddd;
+    }
+
+    .screenshot-el {
+        margin-bottom: 16px;
+    }
+
+    hr {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .material-icons {
+        vertical-align: -6px;
+    }
+
+    p {
+        line-height: 1.25em;
+    }
+
+    .caption {
+        font-size: 16px;
+        /*font-style: italic;*/
+        color: #666;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    video {
+        display: block;
+        margin: auto;
+    }
+
+    figure {
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #bibtex pre {
+        font-size: 13.5px;
+        background-color: #eee;
+        padding: 16px;
+    }
+
+    .blue {
+        color: #2c82c9;
+        font-weight: bold;
+    }
+
+    .orange {
+        color: #d35400;
+        font-weight: bold;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .paper-btn {
+        position: relative;
+        text-align: center;
+
+        display: inline-block;
+        margin: 8px;
+        padding: 8px 8px;
+
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+
+        background-color: #B6486F;
+        color: white !important;
+        font-size: 20px;
+        width: 100px;
+        font-weight: 600;
+    }
+
+    .paper-btn-parent {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0px;
+    }
+
+    .paper-btn:hover {
+        opacity: 0.85;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .venue {
+        /*color: #B6486F;*/
+        font-size: 30px;
+
+    }
+
+</style>
+
+<!-- End : Google Analytics Code-->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+      rel='stylesheet' type='text/css'>
+<head>
+    <title>Diffusion Models for Adversarial Purification</title>
+    <meta property="og:description" content="Diffusion Models for Adversarial Purification"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@ArashVahdat">
+    <meta name="twitter:title" content="Diffusion Models for Adversarial Purification">
+    <meta name="twitter:description"
+          content="We propose <i>DiffPure</i> that uses diffusion models for adversarial purification.">
+    <meta name="twitter:image" content="">
+</head>
+
+<body>
+<div class="container">
+    <div class="paper-title">
+        <h1>Diffusion Models for Adversarial Purification</h1>
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row">
+                <div class="col-3 text-center"><a href="https://weilinie.github.io/">Weili Nie</a><sup>1</sup></div>
+                <div class="col-3 text-center"><a href="https://scholar.google.com/citations?user=jhHkXVUAAAAJ&hl=en">Brandon
+                    Guo</a><sup>2</sup>
+                </div>
+                <div class="col-3 text-center"><a href="https://yjhuangcd.github.io/">Yujia Huang</a><sup>2</sup>
+                </div>
+                <div class="col-3 text-center"><a href="https://xiaocw11.github.io/">Chaowei Xiao</a><sup>1</sup>
+                </div>
+                <div class="col-3 text-center"><a href="http://latentspace.cc/">Arash Vahdat</a><sup>1</sup></div>
+                <div class="col-3 text-center"><a href="http://tensorlab.cms.caltech.edu/users/anima/">Anima
+                    Anandkumar</a><sup>1,2</sup></div>
+            </div>
+
+            <center>
+                <table align=center width=500px>
+                    <tr>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>1</sup> NVIDIA</span>
+                            </center>
+                        </td>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>2</sup> Caltech</span>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+
+        </center>
+        <br>
+        <center><img width="20%" src="./assets/nvidialogo.png" style="margin-top: 20px; margin-bottom: 3px;"></center>
+        <!--        <div class="affil-row">-->
+        <!--            <div class="venue text-center"><b>ICLR 2022 (spotlight)</b></div>-->
+        <!--        </div>-->
+        <br>
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="">
+                    <span class="material-icons"> description </span>
+                    Paper
+                </a>
+                <a class="paper-btn" href="">
+                    <span class="material-icons"> code </span>
+                    Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    <section id="news">-->
+    <!--        <h2>News</h2>-->
+    <!--        <hr>-->
+    <!--        <div class="row">-->
+    <!--            &lt;!&ndash; <div><span class="material-icons"> event </span> [Dec 2021] Paper presented at NeurIPS 2021.</div>-->
+    <!--            <div><span class="material-icons"> event </span> [Feb 2022] Our <a href="https://github.com/NVlabs/denoising-diffusion-gan">code</a> has been released.</div>&ndash;&gt;-->
+    <!--            <div><span class="material-icons"> event </span> [Jan 2022] Our paper is accepted to ICLR 2022 as a spotlight paper!</div>-->
+    <!--            <div><span class="material-icons"> event </span> [Dec 2021] <a href="https://twitter.com/ArashVahdat/status/1471513155054362625">Twitter thread</a> explaining the work in detail.</div>-->
+    <!--            <div><span class="material-icons"> event </span> [Dec 2021] <a href="https://nvlabs.github.io/denoising-diffusion-gan">Project page</a> released!</div>-->
+    <!--            <div><span class="material-icons"> event </span> [Dec 2021] Draft released on <a href="https://arxiv.org/abs/2112.07804">arXiv</a>!</div>-->
+    <!--        </div>-->
+    <!--    </section>-->
+
+    <section id="abstract"/>
+    <h2>Abstract</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            Adversarial purification refers to a class of defense methods that remove adversarial perturbations using a
+            generative model. These methods do not make assumptions on the form of attack and the classification model,
+            and thus can defend pre-existing classifiers against unseen threats. However, their performance currently
+            falls behind adversarial training methods. In this work, we propose <i>DiffPure</i> that uses diffusion
+            models for adversarial purification: Given an adversarial example, we first diffuse it with a small amount
+            of noise following a forward diffusion process, and then recover the clean image through a reverse
+            generative process. To evaluate our method against strong adaptive attacks in an efficient and scalable way,
+            we propose to use the adjoint method to compute full gradients of the reverse generative process. Extensive
+            experiments on three image datasets including CIFAR-10, ImageNet and CelebA-HQ with three classifier
+            architectures including ResNet, WideResNet and ViT demonstrate that our method achieves the state-of-the-art
+            results, outperforming current adversarial training and adversarial purification methods, often by a large
+            margin.
+        </p>
+    </div>
+    </section>
+
+
+    <section id="teaser-image">
+        </p>
+        <figure style="margin-top: 20px; margin-bottom: 20px;">
+            <center><img width="70%" src="./assets/teaser_v7.jpeg" style="margin-bottom: 20px;"></center>
+            <p class="caption">
+                Given a pre-trained diffusion model, we add noise to adversarial images following the forward diffusion
+                process with a small diffusion timestep <i>t*</i> to get diffused images, from which we recover clean
+                images through the reverse denoising process before classification. Adaptive attacks backpropagate
+                through the SDE to get full gradients of our defense system.
+            </p>
+            <p class="caption">
+            </p>
+        </figure>
+    </section>
+
+
+    <!--    <section id="intro"/>-->
+    <!--    <h2>Background</h2>-->
+    <!--    <hr>-->
+    <!--    <div class="flex-row">-->
+    <!--        <p>-->
+    <!--            Neural networks are vulnerable to adversarial attacks: Adding imperceptible perturbations to the input can-->
+    <!--            easily mislead trained neural networks to predict incorrect classes. Thus, the problem we are solving is to-->
+    <!--            defend neural networks against adversarial attacks. Currently, there are two forms of defense for neural-->
+    <!--            networks:-->
+    <!--            1) <i>Adversarial training</i>, which trains neural networks on adversarial examples. Its drawback is that-->
+    <!--            most-->
+    <!--            adversarial training methods can only defend against a specific attack that they are trained with. Recent-->
+    <!--            works on defending against unseen threats add a carefully designed threat model into their adversarial-->
+    <!--            training pipeline, but they suffer from a significant performance drop. Additionally, the computational-->
+    <!--            complexity of adversarial training is usually higher than standard training.-->
+    <!--            2) <i>Adversarial purification</i>, which relies on generative models to purify adversarially perturbed-->
+    <!--            images-->
+    <!--            before classification. Compared to the adversarial training methods, adversarial purification can defend-->
+    <!--            against unseen threats in a plug-n-play manner without re-training the classifiers. But their performance-->
+    <!--            usually falls behind current adversarial training methods.-->
+    <!--            Our method belongs to the second form of defense, which means it can defend against unseen threats.-->
+    <!--            Furthermore, it achieves better robustness performance than the state-of-the-art adversarial training-->
+    <!--            methods.-->
+    <!--        </p>-->
+    <!--    </div>-->
+
+    <!--    <figure style="width: 100%">-->
+    <!--        <center><img width="55%" src="assets/trilemma.gif"></center>-->
+    <!--    </figure>-->
+    <!--    <div class="flex-row">-->
+    <!--        <p>-->
+    <!--            The figure above summarizes how mainstream generative frameworks tackle the trilemma. Generative adversarial-->
+    <!--            networks (GANs) generate high-quality samples rapidly, but they are known for poor mode coverage.-->
+    <!--            Conversely, variational autoencoders (VAEs) and normalizing flows cover data modes faithfully, but they-->
+    <!--            often suffer from low sample quality. Recently, diffusion models have emerged as powerful generative models.-->
+    <!--            These models demonstrate surprisingly good results in sample quality, beating GANs in image generation. They-->
+    <!--            also feature good mode coverage and sample diversity, indicated by high likelihood. Diffusion models have-->
+    <!--            already been applied to a variety of generation tasks. However, sampling from them often requires thousands-->
+    <!--            of neural network evaluations, making their application to real-world problems expensive. <b>In this paper,-->
+    <!--            we tackle the generative learning trilemma by reformulating denoising diffusion models specifically for fast-->
+    <!--            sampling while maintaining strong mode coverage and sample quality. </b>-->
+    <!--        </p>-->
+    <!--    </div>-->
+    </section>
+
+
+    <!--    <section id="advantages"/>-->
+    <!--    <h2>Why is Sampling from Denoising Diffusion Models so Slow?</h2>-->
+    <!--    <hr>-->
+    <!--    <div class="flex-row">-->
+    <!--        <p> Diffusion models define a forward diffusion process that maps data to noise by gradually perturbing the-->
+    <!--            input data. Data generation is achieved using a parametrized reverse process that performs iterative-->
+    <!--            denoising in thousands of steps, starting from random noise. In this paper, we investigate the slow sampling-->
+    <!--            issue of diffusion models and we observe that diffusion models commonly assume that the denoising-->
+    <!--            distribution in the reverse can be approximated by Gaussian distributions. However, it is known that the-->
+    <!--            Gaussian assumption holds only in the infinitesimal limit of small denoising steps, which leads to the-->
+    <!--            requirement of a large number of steps in the reverse process. When the reverse process uses larger step-->
+    <!--            sizes (i.e., it has fewer denoising steps), we need a non-Gaussian multimodal distribution for modeling the-->
+    <!--            denoising distribution. Intuitively, in image synthesis, the multimodal distribution arises from the fact-->
+    <!--            that multiple plausible clean images may correspond to the same noisy image. </p>-->
+    <!--    </div>-->
+    <!--    <figure style="width: 100%">-->
+    <!--        <center><img width="90%" src="assets/denoising.gif"></center>-->
+    <!--        <p class="caption" style="margin-bottom: 24px;">-->
+    <!--            <b>Top</b>: Evolution of a 1D data distribution q(x<sub>0</sub>) according to the forward diffusion process.-->
+    <!--            <b>Bottom</b>: Visualizations of the true denoising distribution when conditioning on a fixed x<sub>5</sub>-->
+    <!--            with varying step sizes shown in different colors. The true denoising distribution for a small step size-->
+    <!--            (shown in yellow) is close to a Gaussian distribution. However, it becomes more complex and multimodal as-->
+    <!--            the step size increases.-->
+    <!--        </p>-->
+    <!--    </figure>-->
+    <!--    </section>-->
+
+    <section id="novelties"/>
+    <h2>Adversarial Purification with Diffusion Models</h2>
+    <hr>
+    <div class="flex-row">
+        <p>We propose a new adversarial purification method, termed DiffPure, that uses the forward and reverse
+            processes of diffusion models to purify adversarial images. Specifically, given a pre-trained diffusion
+            model, our method consists of two steps: (i) we first add noise to adversarial examples by following the
+            forward process with a small diffusion timestep, and (ii) we then solve the reverse stochastic differential
+            equation (SDE) to recover clean images from the diffused adversarial examples. An important design parameter
+            in our method is the choice of diffusion timestep, since it
+            represents the amount of noise added during the forward process. Our theoretical analysis reveals that the
+            noise needs to be high enough to remove adversarial perturbations but not too large to destroy the label
+            semantics of purified images.
+        </p>
+        <p>Furthermore, strong adaptive attacks require gradient
+            backpropagation through the SDE solver in our method, which suffers from the memory issue if implemented
+            naively. In particular, denoted by N the number of function evaluations in solving the SDE, the required
+            memory increases by O(N). Thus, we propose to use the adjoint method to efficiently calculate full gradients
+            of the reverse SDE with a constant memory cost.
+        </p>
+    </div>
+    <figure style="width: 100%">
+        <center><img width="65%" src="assets/smile_glasses_v0.jpeg"></center>
+        <p class="caption" style="margin-bottom: 24px;">
+            The first column shows adversarial examples produced by attacking attribute classifiers using
+            PGD &#120001<sub>&#8734</sub> (&#949=16/255). Our method purifies the adversarial examples by first diffusing 
+            them up to the timestep t=0.3, following the forward diffusion process, and then, it removes perturbations 
+            using the reverse generative SDE. The middle three columns show the intermediate results of solving the 
+            reverse SDE in DiffPure at different timesteps. We observe that the purified images at t=0 match the clean images (last column).
+        </p>
+    </figure>
+    </section>
+
+
+    <section id="results">
+        <h2>Main Results</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                We empirically compare our method against the latest adversarial training and adversarial purification
+                methods on various strong adaptive attack benchmarks.
+                Extensive experiments on three datasets (i.e., CIFAR-10, ImageNet and CelebA-HQ) across multiple
+                classifier architectures (i.e., ResNet, WideResNet and ViT) demonstrate the state-of-the-art performance
+                of our method.
+            </p>
+            <p>
+                <b>- Comparison with adversarial training.</b> Compared to the state-of-the-art adversarial training
+                methods against AutoAttack &#120001<sub>&#8734</sub> ,
+                our method shows absolute improvements of up to +7.68% on ImageNet in robust accuracy.
+            </p>
+            <figure style="width: 100%;">
+                <a href="assets/comp_baselines_3.jpeg">
+                    <center><img width="50%" src="assets/comp_baselines_3.jpeg"></center>
+                </a>
+                <p class="caption" style="margin-bottom: 24px;">
+                    Comparison with state-of-the-art adversarial training methods against AutoAttack on ImageNet with
+                    ResNet-50 and DeiT-S, respectively.
+                </p>
+            </figure>
+
+            <p>
+                <b>- Comparison with other purification methods.</b> In comparison to the state-of-the-art adversarial
+                purification methods against the BPDA+EOT attack, we have absolute
+                improvements of +11.31% on CIFAR-10 in robust accuracy.
+            </p>
+            <figure style="width: 100%;">
+                <a href="assets/comp_baselines_2.jpeg">
+                    <center><img width="33%" src="assets/comp_baselines_2.jpeg"></center>
+                </a>
+                <p class="caption" style="margin-bottom: 24px;">
+                    Comparison with latest purification methods against the adaptive black-box BPDA+EOT attack
+                    on WideResNet-28-10 for CIFAR-10.
+                </p>
+            </figure>
+
+            <p>
+                <b>- Defense against unseen threats.</b> Compared to the latest adversarial training methods against
+                unseen threats, our method
+                exhibits a more significant absolute improvement (up to +36% in robust accuracy).
+            </p>
+            <figure style="width: 100%;">
+                <a href="assets/comp_baselines_1.jpeg">
+                    <center><img width="50%" src="assets/comp_baselines_1.jpeg"></center>
+                </a>
+                <p class="caption" style="margin-bottom: 24px;">
+                    Comparison with state-of-the-art defense methods against unseen threat models (including AutoAttack
+                    &#120001<sub>&#8734</sub>, AutoAttack &#120001<sub>2</sub>, and StdAdv) on ResNet-50 for
+                    CIFAR-10.
+                </p>
+            </figure>
+        </div>
+        <!--        <p>-->
+        <!--            For instance, compared to adversarial training methods against AutoAttack &#120001<sub>&#8734</sub> ,-->
+        <!--            our method-->
+        <!--            shows absolute improvements of up to +5.44% on CIFAR-10 and up to +7.68% on ImageNet, respectively, in-->
+        <!--            robust accuracy.-->
+        <!--            Moreover, compared to the latest adversarial training methods against unseen threats, our method-->
+        <!--            exhibits a more significant absolute improvement (up to +36% in robust accuracy).-->
+        <!--            In comparison to adversarial purification methods against the BPDA+EOT attack, we have absolute-->
+        <!--            improvements of +11.31% on CIFAR-10 and +15.63% on CelebA-HQ, respectively, in robust accuracy.-->
+        <!--        </p>-->
+        <!--        <figure style="width: 100%;">-->
+        <!--            <a href="assets/comp_baselines.jpeg">-->
+        <!--                <img width="100%" src="assets/comp_baselines.jpeg">-->
+        <!--            </a>-->
+        <!--            <p class="caption" style="margin-bottom: 24px;">-->
+        <!--                <b>Left:</b>-->
+        <!--                Comparison with state-of-the-art defense methods against unseen threat models on ResNet-50 for CIFAR-10.-->
+        <!--                <b>Middle:</b>-->
+        <!--                Comparison with latest adversarial purification methods against the adaptive black-box BPDA+EOT attack-->
+        <!--                on-->
+        <!--                WideResNet-28-10 for CIFAR-10.-->
+        <!--                <b>Right:</b>-->
+        <!--                Comparison with state-of-the-art adversarial training methods against AutoAttack on ImageNet with-->
+        <!--                ResNet-50 and DeiT-S, respectively.-->
+        <!--            </p>-->
+        <!--        </figure>-->
+
+    </section>
+
+
+    <section id="advantages"/>
+    <h2>Our Insights and Limitations</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            DiffPure uses different noise levels in the diffusion process of a diffusion model to smooth out
+            perturbations and then recovers clean images in the denoising process. It can maintain the class semantics
+            during purification due to the generative power of diffusion models. It also introduces
+            proper noise injection in the forward and reverse processes for a stronger defense. These factors
+            make DiffPure better than previous methods. Thus, we think DiffPure is more transparent than adversarial
+            training that instead heavily relies on specialized training strategies.
+        </p>
+        <p>
+            Our method has two major limitations: (i) the purification process takes much time (proportional to the
+            diffusion timestep), making our method inapplicable to the real-time tasks,
+            and (ii) diffusion models are sensitive to image colors, making our method incapable of defending
+            color-related
+            corruptions. It is interesting to either apply recent works on accelerating diffusion models or design new
+            diffusion models specifically for model robustness to overcome these two limitations.
+        </p>
+    </div>
+    </section>
+
+    <section id="paper">
+        <h2>Paper</h2>
+        <hr>
+        <div class="flex-row">
+            <div style="box-sizing: border-box; padding: 16px; margin: auto;">
+                <a href=""><img class="screenshot" src="assets/diffusion_purification_preview.jpg"></a>
+            </div>
+            <div style="width: 50%; font-size: 20px;">
+                <p><b>Diffusion Models for Adversarial Purification</b></p>
+                <p>Weili Nie, Brandon Guo, Yujia Huang, Chaowei Xiao,
+                    Arash Vahdat, Anima Anandkumar</p>
+                <!--                <p><i>* Work done during an internship at NVIDIA.</i></p>-->
+                <div><span class="material-icons"> description </span><a href=""> arXiv
+                    version</a></div>
+                <div><span class="material-icons"> insert_comment </span><a href="assets/nie2022diffpure.bib">
+                    BibTeX</a>
+                </div>
+                <div><span class="material-icons"> integration_instructions </span><a
+                        href=""> Code</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <pre><code>@article{nie2022diffpure,
+  title={Diffusion Models for Adversarial Purification},
+  author={Nie, Weili and Guo, Brandon and Huang, Yujia and Xiao, Chaowei and Vahdat, Arash and Anandkumar, Anima},
+  journal={arXiv preprint arXiv:},
+  year={2022}
+}</code></pre>
+    </section>
+</div>
+</body>
+</html>
+
